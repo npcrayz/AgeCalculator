@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculation</title>
+    <style>
+
+        * {
+            font-family: Arial;
+        }
+
+        html, body, :root {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgb(89, 0, 255);
+            padding: 16px;
+            margin: 0 auto;
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 4px 0 black;
+            margin-top: 50px;
+        }
+        
+        .container h2 {
+            text-align: center;
+            font-family: arial;
+            color: white;
+            font-size: 25px;
+        }
+
+        .result {
+            font-size: 15px;
+            color: Red;
+            font-weight: 50;
+            margin-top: 15px;
+        }
+
+        .results {
+            font-size: 15px;
+            color: rgb(0, 255, 0);
+            font-weight: 50;
+        }
+
+        #birthday {
+            padding: 15px;
+            color:black;
+            background-color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        #birthday-btn {
+            padding: 15px;
+            background: grey;
+            color: white;
+            cursor: pointer;
+            transition: .5s;
+            border-radius: 8px;
+        }
+
+        #birthday-btn:hover {
+            color: black;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Age Calculator</h2>
+        <label>Input your date birth!</label>
+        <input type="number" id="birthday" placeholder="Example: 1945"/>
+        <button id="birthday-btn" onclick="checkresult()">Check your age</button> <!-- onclick buat melakukan apa yang mau dilakuin setelah tombol tersebut diklik, checkresult adalah variable-->
+        <p class="result">Result: <label class="results" id="resultView"></label></p> <!-- hasil akan ditampilkan disini -->
+    </div>
+</body>
+
+<script>
+    function checkresult() {
+        const birthdayinput = document.getElementById("birthday");
+        const birthday = birthdayinput.value;
+
+        const now = new Date().getFullYear(); // mencari tahun yang terbaru secara otomatis
+        const age = now - birthday;
+
+        const result = document.getElementById("resultView");
+        resultView.innerHTML = "Your age right now is " + age + " years old";
+        alert("You are " + age  + " years old");
+    }
+</script>
+</html>
